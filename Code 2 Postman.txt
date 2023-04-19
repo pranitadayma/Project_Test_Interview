@@ -1,0 +1,14 @@
+public class Postman {
+    Public static void getPostman(){
+         Http http = new http();
+        HttpRequest request = new HttpRequest();
+        request.setEndpoint('https://postman-echo.com/get?foo1=bar1&foo2=bar2');
+        request.setMethod('GET');
+        
+        HttpResponse response = http.send(request);
+        System.debug('Response Code'+response.getStatusCode());
+        if(response.getStatusCode() == 200){
+            System.debug('Response Body'+response.getBody());
+    }
+    }
+}
